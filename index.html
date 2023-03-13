@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>ГЕСТ ДАЙ СПИСАТЬ</title>
+  
+  <style>
+	
+
+::-webkit-meter-even-less-good-valuehgfh   
+		*, *:before, *:after {margin: 0; padding: 0; box-sizing: border-box;}
+		body {background: #2F2556; color: #abaab1; font: 14px 'Open Sans', sans-serif;}
+		base {background-color: aqua; color: coral forestgreen ;perspective: 0cap;} 
+
+		.top { padding-right: 20px; background: #261F41; text-align: right; }
+		a { color: rgba(255,255,255,0.6); text-transform: uppercase; text-decoration: none; line-height: 42px; }
+
+		h1 {padding: 50px 0; font-weight: 400; text-align: center;}
+		.quizsection {empty-cells: hide;}
+		.main {margin: 0 auto; max-width: 500px;}
+		.main .quizsection {margin-bottom: 20px;}
+ </style>
+ 
+</head>
+
+<body>
+
+<h1>ГРЕЧКИ</h1>
+
+<section class="main">
+
+<form name="quiz" action="javascript:check();" class="quizform">
+
+<div class="quizsection">
+
+
+	<h2>Вопрос #1 Виды графики</h2>
+	
+	<div class="answer">
+		<input name="q1" value="value2" id="value1" type="radio" checked="checked" /> Компьютерная графика
+	</div>
+
+	<div class="answer">
+		<input name="q1" value="value1" id="value2" type="radio" /> Прикладная графика
+	</div>
+
+	<div class="answer">
+		<input name="q1" value="value1" id="value3" type="radio" /> Станковая графика
+	</div>
+
+	
+
+</div>
+
+<div class="quizsection">
+
+	<h2>Вопрос #2 Форматы графики</h2>
+
+	<div class="answer">
+		<input name="q2" value="value1" id="value1" type="radio" checked="checked" /> PSD
+	</div>
+
+	<div class="answer">
+		<input name="q2" value="value2" id="value2" type="radio" /> JPG
+	</div>
+
+	<div class="answer">
+		<input name="q2" value="value1" id="value3" type="radio" /> hzw
+	</div>
+
+
+</div>
+
+<div class="quizsection">
+
+	<h2>Вопрос #3 Цветовая модель</h2>
+
+	<div class="answer">
+		<input name="q3" value="value1" id="value1" type="radio" checked="checked" /> CMYK
+	</div>
+
+	<div class="answer">
+		<input name="q3" value="value1" id="value2" type="radio" /> RGB
+	</div>
+
+	<div class="answer">
+		<input name="q3" value="value2" id="value3" type="radio" /> HSB
+	</div>
+
+<div class="quizsection">
+
+		<h2>Вопрос #4 Растровый редактор</h2>
+	
+		<div class="answer">
+			<input name="q4" value="value1" id="value1" type="radio" checked="checked" /> Core Draw
+		</div>
+	
+		<div class="answer">
+			<input name="q4" value="value1" id="value2" type="radio" /> ВОРД
+		</div>
+	
+		<div class="answer">
+			<input name="q4" value="value2" id="value3" type="radio" /> фОТОШОП
+		</div>
+
+</div>
+<div class="quizsection">
+
+	<h2>Вопрос #5 В модели RGB присутствуют</h2>
+
+	<div class="answer">
+		<input name="q5" value="value1" id="value1" type="radio" checked="checked" /> чёрный 
+	</div>
+
+	<div class="answer">
+		<input name="q5" value="value1" id="value2" type="radio" /> зелёный
+	</div>
+
+	<div class="answer">
+		<input name="q5" value="value2" id="value3" type="radio" /> орал
+</div>
+
+<input value="ПРОВЕРИТЬ" type="submit" /> <input value="ТЫК" type="reset" />
+
+</form>
+
+</section>
+
+<script type="text/javascript">// java script начало
+
+   var result;
+   
+   function check()
+
+   {
+
+      var question;
+      var value1;
+      var value2;
+      
+      
+      question = 1;
+      value1 = 0;
+      value2 = 0;
+      
+      
+      result = "";
+
+      var choice;
+      
+      for (question = 1; question <= 3; question++) {
+      
+         var q = document.forms['quiz'].elements['q'+question];
+
+            for (var i = 0; i < q.length; i++) {
+               if (q[i].checked) {
+                  choice = q[i].value;
+               }
+            }
+
+            if (choice == "value1") {
+               value1++;
+            }
+
+            if (choice == "value2") {
+               value2++;
+            }
+
+
+         }
+
+      if (value2 == 0) {
+
+        // КЛАС ОЦЕНКИ 2
+         result = "ocenka2";
+
+      }
+      // перемена 
+      else if (value2 == 1) {
+
+        // КЛАС ОЦЕНКИ 3
+         result = "ocenka3";
+
+      }
+
+      else if (value2 == 2) {
+
+        // КЛАС ОЦЕНКИ 4
+         result = "ocenka4";
+
+      }
+
+      else if (value2 == 3) {
+
+         // КЛАС ОЦЕНКИ 5
+         result = "ocenka5";
+
+      }
+
+
+      else {
+         result = "404";
+      }
+
+      window.location = result + '.html';
+
+   }
+
+</script>
+
+</body>
+</html>
